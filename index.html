@@ -60,21 +60,54 @@
 
   <main>
     <!-- Video-Sektion -->
-    <section id="video">
-      <h2>Hörstück</h2>
-      <div class="video-container">
-        <iframe 
-          src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" 
-          frameborder="0" 
-          webkitallowfullscreen 
-          mozallowfullscreen 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p>Den vertonten Text findet ihr auch noch einmal vollständig unter dem Video.</p>
-    </section>
+<section id="video">
+  <h2>Hörstück</h2>
+  <div class="video-container" id="video-placeholder">
+    <!-- Vorschaubild -->
+    <img src="preview.jpg" alt="Vorschaubild Hörstück" style="width:100%; cursor:pointer;">
+    <!-- Play-Button optional -->
+    <div class="play-button">&#9658;</div>
+  </div>
+  <p>Den vertonten Text findet ihr auch noch einmal vollständig unter dem Video.</p>
+</section>
 
-    <!-- Text-Sektion -->
+<style>
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-container .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: rgba(255,255,255,0.8);
+  pointer-events: none;
+}
+</style>
+
+<script>
+document.getElementById('video-placeholder').addEventListener('click', function() {
+  this.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>';
+});
+</script>
+
+  <!-- Text-Sektion -->
     <section id="text">
       <h2>Textversion</h2>
 
