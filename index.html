@@ -74,23 +74,20 @@
 </main>
 
 <style>
-/* Wrapper für Vorschaubild und iframe */
 .video-wrapper {
-  position: relative;
-  max-width: 640px;      /* maximale Breite */
-  width: 100%;           /* responsiv */
+  max-width: 640px;
+  width: 100%;
   cursor: pointer;
-  display: block;        /* linksbündig */
+  display: block;
+  position: relative;
 }
 
-/* Vorschaubild */
 .video-wrapper img {
   width: 100%;
-  height: auto;          /* Seitenverhältnis bleibt korrekt */
+  height: auto;
   display: block;
 }
 
-/* Play-Button */
 .video-wrapper .play-button {
   position: absolute;
   top: 50%;
@@ -101,11 +98,11 @@
   pointer-events: none;
 }
 
-/* iframe (wird nach Klick eingefügt) */
+/* iframe wird automatisch proportional 16:9 */
 .video-wrapper iframe {
   width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 Verhältnis */
+  height: auto;
+  aspect-ratio: 16 / 9;
   display: block;
 }
 </style>
@@ -114,7 +111,7 @@
 document.getElementById('video-wrapper').addEventListener('click', function() {
   this.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten?autoplay=1" ' +
                    'frameborder="0" allow="autoplay; fullscreen" allowfullscreen ' +
-                   'style="width:100%; height:360px; display:block;"></iframe>';
+                   'style="width:100%; aspect-ratio:16/9; display:block;"></iframe>';
 });
 </script>
     
