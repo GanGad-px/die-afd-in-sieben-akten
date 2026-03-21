@@ -50,18 +50,25 @@
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .auth { font-size: 1.6rem; font-weight: bold; margin-block-start: 0em; }
-    .footer {
-    width: 100vw;                 /* volle Breite des Viewports */
-    background-color: #c11742;
-    color: #fff;
-    padding: 1rem 0;
-    }
-    .footer-inner {
-    max-width: 1280px;            /* entspricht deinem Content */
-    margin: 0 auto;
-    padding: 0 6rem;              /* gleiche Innenränder wie Body */
-    box-sizing: border-box;
-    }
+
+/* Footer nimmt volle Breite, ohne Scrollbalken */
+footer {
+  width: 100%;                 /* volle Breite des Containers */
+  background-color: #c11742;   /* beliebige Farbe */
+  color: #fff;
+  padding: 1rem 0;
+  margin: 0;                    /* keine Margins */
+  box-sizing: border-box;
+}
+
+/* Innerer Container wie Content, mittig */
+.footer-inner {
+  max-width: 1280px;           /* passt zu deinem Content */
+  margin: 0 auto;              /* zentriert */
+  padding: 0 6rem;             /* gleiche linke/rechte Innenabstände wie Body */
+  box-sizing: border-box;
+}
+    
   </style>
 </head>
 
