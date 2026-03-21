@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gangad-px.github.io/die-afd-hoerstueck-in-sieben-akten/sitemap.xml
