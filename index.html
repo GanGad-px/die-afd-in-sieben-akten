@@ -100,7 +100,9 @@
 <script>
 document.getElementById('video-preview').addEventListener('click', function() {
   const container = document.getElementById('video-container');
-  container.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten?autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>';
+  container.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten?autoplay=1" ' +
+                        'frameborder="0" allow="autoplay; fullscreen" allowfullscreen ' +
+                        'style="width:640px; max-width:100%; height:360px; display:block;"></iframe>';
   this.style.display = 'none';  // Vorschaubild ausblenden
 });
 </script>
