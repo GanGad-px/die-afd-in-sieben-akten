@@ -98,12 +98,10 @@
 </style>
 
 <script>
-document.getElementById('video-wrapper').addEventListener('click', function() {
-  const width = this.offsetWidth;
-  const height = width * 9 / 16;  // 16:9
-  this.innerHTML = `<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" 
-    frameborder="0" allowfullscreen
-    style="width:100%; height:${height}px; display:block;"></iframe>`;
+document.getElementById('video-preview').addEventListener('click', function() {
+  const container = document.getElementById('video-container');
+  container.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten?autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>';
+  this.style.display = 'none';  // Vorschaubild ausblenden
 });
 </script>
 
