@@ -62,7 +62,6 @@
 
 <main>
   <!-- Video-Sektion -->
-  
   <section id="video">
   <h2>als Hörstück:</h2>
   <div class="video-container" id="video-placeholder">
@@ -74,15 +73,15 @@
 <style>
 .video-container {
   position: relative;
-  width: 640px;        /* feste Maximalbreite */
-  max-width: 100%;     /* responsiv */
-  margin-left: 0;      /* linkssbündig */
+  width: 640px;           /* gewünschte Breite */
+  max-width: 100%;        /* responsive */
+  margin-left: 0;         /* linkssbündig */
   cursor: pointer;
 }
 
 .video-container img {
   width: 100%;
-  height: auto;       /* Seitenverhältnis bleibt */
+  height: auto;           /* bewahrt Seitenverhältnis */
   display: block;
 }
 
@@ -93,14 +92,14 @@
   transform: translate(-50%, -50%);
   font-size: 4rem;
   color: rgba(255,255,255,0.8);
-  pointer-events: none; /* Klick geht durch */
+  pointer-events: none;  /* wichtig, dass Klick durchgeht */
 }
 </style>
 
 <script>
 document.getElementById('video-placeholder').addEventListener('click', function() {
   const width = this.offsetWidth;
-  const height = width * 9 / 16;  // 16:9 Verhältnis
+  const height = width * 0.5625; // 16:9 Verhältnis
   this.innerHTML = `<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" frameborder="0" allowfullscreen style="width:100%; height:${height}px;"></iframe>`;
 });
 </script>
