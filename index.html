@@ -79,45 +79,45 @@
 
 </main>
 
+<section id="video">
+  <h2>als Hörstück:</h2>
+  <div class="video-container" id="video-placeholder">
+    <img src="preview.jpg" alt="Vorschaubild Hörstück">
+    <div class="play-button">&#9658;</div>
+  </div>
+</section>
+
 <style>
-.video-preview {
-  display: inline-block;      /* linksbündig */
-  cursor: pointer;
-  max-width: 640px;           /* maximale Breite */
-  width: 100%;
+.video-container {
   position: relative;
+  width: 640px;           /* gewünschte Breite */
+  max-width: 100%;        /* responsive */
+  margin-left: 0;         /* linkssbündig */
+  cursor: pointer;
 }
 
-.video-preview img {
+.video-container img {
   width: 100%;
-  height: auto;               /* Seitenverhältnis bleibt erhalten */
+  height: auto;           /* bewahrt Seitenverhältnis */
   display: block;
 }
 
-.video-preview .play-button {
+.video-container .play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4rem;
   color: rgba(255,255,255,0.8);
-  pointer-events: none;
-}
-
-.video-container iframe {
-  width: 640px;               /* gleiche Breite wie Vorschaubild */
-  max-width: 100%;
-  height: 360px;              /* 16:9 proportional */
-  display: block;
-  margin-top: 1rem;
+  pointer-events: none;  /* wichtig, dass Klick durchgeht */
 }
 </style>
 
 <script>
-document.getElementById('video-preview').addEventListener('click', function() {
-  const container = document.getElementById('video-container');
-  container.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" frameborder="0" allowfullscreen></iframe>';
-  this.style.display = 'none';  // Vorschaubild ausblenden
+document.getElementById('video-placeholder').addEventListener('click', function() {
+  const width = this.offsetWidth;
+  const height = width * 0.5625; // 16:9 Verhältnis
+  this.innerHTML = `<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" frameborder="0" allowfullscreen style="width:100%; height:${height}px;"></iframe>`;
 });
 </script>
 
