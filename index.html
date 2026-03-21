@@ -75,13 +75,14 @@
 <style>
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Ratio */
+  padding-bottom: 56.25%;
   height: 0;
-  overflow: hidden;
-  max-width: 100%;
+  width: 100%;
+  max-width: 640px;   /* maximale Breite */
+  margin-left: 0;
   cursor: pointer;
 }
-
+  
 .video-container img {
   position: absolute;
   top: 0;
