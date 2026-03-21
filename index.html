@@ -63,37 +63,30 @@
 <main>
   <!-- Video-Sektion -->
   <section id="video">
-    <h2>als Hörstück:</h2>
+  <h2>als Hörstück:</h2>
 
-    <!-- Vorschaubild -->
-    <div class="video-preview" id="video-preview">
-      <img src="preview.jpg" alt="Vorschaubild Hörstück">
-      <div class="play-button">&#9658;</div>
-    </div>
-
-    <!-- Container für iframe -->
-    <div class="video-container" id="video-container"></div>
-
-    <p>Den vertonten Text findet ihr auch noch einmal vollständig unter dem Video.</p>
-  </section>
-</main>
+  <div class="video-wrapper" id="video-wrapper">
+    <img src="preview.jpg" alt="Vorschaubild Hörstück" class="video-preview">
+    <div class="play-button">&#9658;</div>
+  </div>
+</section>
 
 <style>
-.video-preview {
-  display: inline-block;      /* linksbündig */
-  cursor: pointer;
-  max-width: 640px;           /* maximale Breite */
-  width: 100%;
+.video-wrapper {
   position: relative;
+  max-width: 640px;  /* max Breite */
+  width: 100%;       /* responsiv */
+  cursor: pointer;
+  display: block;    /* linksbündig */
 }
 
-.video-preview img {
+.video-wrapper img {
   width: 100%;
-  height: auto;               /* Seitenverhältnis bleibt erhalten */
+  height: auto;      /* Seitenverhältnis bleibt korrekt */
   display: block;
 }
 
-.video-preview .play-button {
+.video-wrapper .play-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -102,21 +95,15 @@
   color: rgba(255,255,255,0.8);
   pointer-events: none;
 }
-
-.video-container iframe {
-  width: 640px;               /* gleiche Breite wie Vorschaubild */
-  max-width: 100%;
-  height: 360px;              /* 16:9 proportional */
-  display: block;
-  margin-top: 1rem;
-}
 </style>
 
 <script>
-document.getElementById('video-preview').addEventListener('click', function() {
-  const container = document.getElementById('video-container');
-  container.innerHTML = '<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" frameborder="0" allowfullscreen></iframe>';
-  this.style.display = 'none';  // Vorschaubild ausblenden
+document.getElementById('video-wrapper').addEventListener('click', function() {
+  const width = this.offsetWidth;
+  const height = width * 9 / 16;  // 16:9
+  this.innerHTML = `<iframe src="https://archive.org/embed/die-afd_hoerstueck-in-sieben-akten" 
+    frameborder="0" allowfullscreen
+    style="width:100%; height:${height}px; display:block;"></iframe>`;
 });
 </script>
 
