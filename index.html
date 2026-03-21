@@ -454,17 +454,18 @@ document.getElementById('video-wrapper').addEventListener('click', function() {
 <style>
 /* Footer über volle Breite */
 footer {
-  width: 100vw;             /* volle Bildschirmbreite */
-  background-color: #c11742; /* deine gewünschte Farbe */
+  width: 100%;                    /* volle Breite des Body */
+  background-color: #c11742;      /* gewünschte Farbe */
   color: #fff;
   border-top: 1px solid #ccc;
+  box-sizing: border-box;          /* padding beeinflusst nicht die Breite */
 }
 
-/* Innerer Container für Content (optional) */
+/* Innerer Container für Text, zentriert */
 .footer-inner {
-  max-width: 1280px;        /* optional, um Text auf Desktop lesbar zu halten */
-  margin: 0 auto;           /* zentriert */
-  padding: 1rem 6rem;       /* innen Abstand wie restlicher Content */
+  max-width: 1280px;              /* optional für lesbare Breite */
+  margin: 0 auto;                 /* zentriert */
+  padding: 1rem 0;                /* oben/unten Abstand, links/rechts keine */
 }
 
 /* Links im Footer */
@@ -473,5 +474,6 @@ footer a {
   text-decoration: underline;
 }
 </style>
+  
 </body>
 </html>
