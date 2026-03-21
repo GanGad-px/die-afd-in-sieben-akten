@@ -50,7 +50,17 @@
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .auth { font-size: 1.6rem; font-weight: bold; margin-block-start: 0em; }
-}}
+    footer {
+    width: 100%;
+    background-color: #c11742;
+    color: #fff;
+    padding: 1rem 0;
+    }
+  .footer-inner {
+  max-width: 1280px;  /* entspricht z.B. deinem Content */
+  margin: 0 auto;
+  padding: 0 6rem;    /* gleiche Ränder wie im Body */
+  }
   </style>
 </head>
 
@@ -450,30 +460,6 @@ document.getElementById('video-wrapper').addEventListener('click', function() {
     <p>© 2025 BesorgterBürger / Sitemap: <a href="sitemap.xml">sitemap.xml</a></p>
   </div>
 </footer>
-
-<style>
-/* Footer über volle Breite */
-footer {
-  width: 100%;                    /* volle Breite des Body */
-  background-color: #c11742;      /* gewünschte Farbe */
-  color: #fff;
-  border-top: 1px solid #ccc;
-  box-sizing: border-box;          /* padding beeinflusst nicht die Breite */
-}
-
-/* Innerer Container für Text, zentriert */
-.footer-inner {
-  max-width: 1280px;              /* optional für lesbare Breite */
-  margin: 0 auto;                 /* zentriert */
-  padding: 1rem 0;                /* oben/unten Abstand, links/rechts keine */
-}
-
-/* Links im Footer */
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-</style>
   
 </body>
 </html>
