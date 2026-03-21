@@ -50,25 +50,27 @@
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .auth { font-size: 1.6rem; font-weight: bold; margin-block-start: 0em; }
-
-/* Footer nimmt volle Breite, ohne Scrollbalken */
+body {
+  font-family: "VictoriaTypewriter", Helvetica;
+  line-height: 1.6;
+  margin: 3.5rem 6rem; /* nur Content-Rand */
+  background: #fdfdfd;
+  color: #222;
+}
+/* Footer über volle Breite, keine horizontalen Scrolls */
 footer {
-  width: 100%;                 /* volle Breite des Containers */
-  background-color: #c11742;   /* beliebige Farbe */
+  width: 100%;
+  background-color: #c11742;
   color: #fff;
   padding: 1rem 0;
-  margin: 0;                    /* keine Margins */
+}
+/* Innerer Footer-Text auf gleiche Breite wie Content */
+footer .footer-inner {
+  max-width: 1280px; /* gleiche max-width wie Main Content */
+  margin: 0 auto;
+  padding: 0 6rem;   /* gleiche Padding wie Body */
   box-sizing: border-box;
 }
-
-/* Innerer Container wie Content, mittig */
-.footer-inner {
-  max-width: 1280px;           /* passt zu deinem Content */
-  margin: 0 auto;              /* zentriert */
-  padding: 0 6rem;             /* gleiche linke/rechte Innenabstände wie Body */
-  box-sizing: border-box;
-}
-    
   </style>
 </head>
 
@@ -465,7 +467,7 @@ document.getElementById('video-wrapper').addEventListener('click', function() {
 
 <footer>
   <div class="footer-inner">
-    <p>© 2025 BesorgterBürger / Sitemap: <a href="sitemap.xml">sitemap.xml</a></p>
+    <p>© 2025 BesorgterBürger / Sitemap: <a href="sitemap.xml" style="color:#fff;">sitemap.xml</a></p>
   </div>
 </footer>
   
